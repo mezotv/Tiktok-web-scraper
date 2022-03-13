@@ -32,7 +32,7 @@ scraper1.tiktokScraper({
 ```
 ## Console output
 
-```json
+```js
 {
   username: 'tiktok',
   followings: '543',
