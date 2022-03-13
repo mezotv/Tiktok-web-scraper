@@ -1,0 +1,20 @@
+{
+  "name": "easy-tiktok-scraper",
+  "version": "0.5.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mezo",
+  "license": "MIT",
+  "description": "Easy tiktok scraper to get data from tiktok",
+  "dependencies": {
+    "puppeteer": "^13.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "bugs": {
+    "url": ""
+  }
+}
