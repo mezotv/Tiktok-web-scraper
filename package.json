@@ -8,13 +8,24 @@
   "author": "Mezo",
   "license": "MIT",
   "description": "Easy tiktok scraper to get data from tiktok",
+  "keywords": [
+    "puppeteer",
+    "tiktok",
+    "tiktok-api",
+    "web-scraper"
+  ],
   "dependencies": {
     "puppeteer": "^13.4.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mezotv/Tiktok-web-scraper.git"
+  },
   "bugs": {
-    "url": ""
-  }
+    "url": "https://github.com/mezotv/Tiktok-web-scraper/issues"
+  },
+  "homepage": "https://github.com/mezotv/Tiktok-web-scraper#readme"
 }
