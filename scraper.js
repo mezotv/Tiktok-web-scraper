@@ -35,13 +35,28 @@ class Scraper {
     );
     const txt2 = await el2.getProperty("textContent");
     const likes = await txt2.jsonValue();
-    //console.log(`Likes: ${rawTxt2}`)
+    //Scrape Description
+    const [el4] = await page.$x(
+      '//*[@id="app"]/div[2]/div[2]/div/div[1]/h2[2]'
+    );
+    const txt4 = await el4.getProperty("textContent");
+    const dsc = await txt4.jsonValue();
+        //Scrape Pfp
+        const [el5] = await page.$x(
+          '//*[@id="app"]/div[2]/div[2]/div/div[1]/div[1]/div[1]/span/img'
+        );
+        const txt5 = await el5.getProperty("src");
+        const pfp = await txt5.jsonValue();
+
 
     return {
         username: username1.trim(),
         followings: followings,
         followers: followers,
-        likes: likes
+        likes: likes,
+        dsc: dsc,
+        url: url,
+        pfp: pfp
     }
   }
 }
