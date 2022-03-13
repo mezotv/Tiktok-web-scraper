@@ -22,11 +22,13 @@ const scraper1 = new Scraper()
 const tiktokData = [];
 
 scraper1.tiktokScraper({
-    username: "tiktok"
-}).then(async (data) => {
+    username: "tiktok",
+  })
+  .then(async (data) => {
     console.log(data);
     tiktokData.push(data);
-});
+  });
+
 ```
 ## Console output
 
