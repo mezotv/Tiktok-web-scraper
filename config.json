@@ -1,0 +1,9 @@
+{
+    "username": "//*[@id='app']/div[2]/div[2]/div/div[1]/div[1]/div[2]/h2",
+    "followings": "//*[@id='app']/div[2]/div[2]/div/div[1]/h2[1]/div[1]/strong",
+    "followers": "//*[@id='app']/div[2]/div[2]/div/div[1]/h2[1]/div[2]/strong",
+    "likes": "//*[@id='app']/div[2]/div[2]/div/div[1]/h2[1]/div[3]/strong",
+    "desc": "//*[@id='app']/div[2]/div[2]/div/div[1]/h2[2]",
+    "url": "https://www.tiktok.com/@",
+    "pfp": "//*[@id='app']/div[2]/div[2]/div/div[1]/div[1]/div[1]/span/img"
+}
