@@ -1,11 +1,11 @@
 {
   "name": "easy-tiktok-scraper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
-  "author": "Mezo<dominik@mezomgmt.com>",
+  "author": "Mezo",
   "license": "MIT",
   "description": "Easy tiktok scraper to get data from tiktok",
   "keywords": [

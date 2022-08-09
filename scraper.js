@@ -3,58 +3,70 @@ const config = require("./config.json")
 class Scraper {
   async tiktokScraper({ username } = {}) {
     const url = `${config.url}${username}`;
-
     const browser = await puppeteer.launch({ headless: true });
-    const page = await browser.newPage();
+   // const page = await browser.newPage();
+    const start = Date.now();
 
-    await page.goto(url, { waitUntil: "networkidle0" });
+    await page.goto(`${url}?lang=en`, { waitUntil: "networkidle2" });
 
     //Scrape Username
-    const [el3] = await page.$x(
+    const [el1] = await page.$x(
       `${config.username}`
     );
-    const txt3 = await el3.getProperty("textContent");
-    const username1 = await txt3.jsonValue()
-    //console.log(`Username: ${rawTxt3}`)
+    const txt1 = await el1.getProperty("textContent");
+    const username1 = await txt1.jsonValue()
     //Scrape Followers
-    const [el] = await page.$x(
+    const [el2] = await page.$x(
       `${config.followers}`
     );
-    const txt = await el.getProperty("textContent");
-    const followers = await txt.jsonValue();
-    //console.log(`Followers: ${rawTxt}`)
+    const txt2 = await el2.getProperty("textContent");
+    const followers = await txt2.jsonValue();
     //Scrape Followings
-    const [el1] = await page.$x(
+    const [el3] = await page.$x(
       `${config.followings}`
     );
-    const txt1 = await el1.getProperty("textContent");
-    const followings = await txt1.jsonValue();
-    //console.log(`Followings: ${rawTxt1}`)
+    const txt3 = await el3.getProperty("textContent");
+    const followings = await txt3.jsonValue();
     //Scrape Likes
-    const [el2] = await page.$x(
+    const [el4] = await page.$x(
       `${config.likes}`
     );
-    const txt2 = await el2.getProperty("textContent");
-    const likes = await txt2.jsonValue();
+    const txt4 = await el4.getProperty("textContent");
+    const likes = await txt4.jsonValue();
     //Scrape Description
-    const [el4] = await page.$x(
+    const [el5] = await page.$x(
       `${config.desc}`
     );
-    const txt4 = await el4.getProperty("textContent");
-    const dsc = await txt4.jsonValue();
+    const txt5 = await el5.getProperty("textContent");
+    const dsc = await txt5.jsonValue();
+
+    //Scrape Description
+    let website = "None";
+      try {
+        const [el6] = await page.$x(
+      `${config.website}`
+    );
+    const txt6 = await el6.getProperty("textContent");
+    website = "https://" + await txt6.jsonValue();
+        } catch (error) {
+          website = "None";
+        }
+
+
         //Scrape Pfp
-        const [el5] = await page.$x(
+        const [el7] = await page.$x(
           `${config.pfp}`
         );
-        const txt5 = await el5.getProperty("src");
-        const pfp = await txt5.jsonValue();
+        const txt7 = await el7.getProperty("src");
+        const pfp = await txt7.jsonValue();
 
-
+        console.log('Took', Date.now() - start, 'ms');
     return {
         username: username1.trim(),
         followings: followings,
         followers: followers,
         likes: likes,
+        website: website,
         dsc: dsc,
         url: url,
         pfp: pfp
